@@ -1,16 +1,20 @@
-import React from 'react';
+import Products from "../Products";
+import { filteredProducts } from "../../store/products";
+import { useSelector } from "react-redux";
+import Grid from "@mui/material/Grid";
+import React from "react";
 
-// const categories = [
-//   { name: 'electronics', displayName: 'Electronics', _id: 1 },
-//   { name: 'food', displayName: 'Food', _id: 2 },
-//   { name: 'clothing', displayName: 'Clothing', _id: 3 },
-// ]
-
-const Categories = () => (
-  <section>
-   <p>Browse our categories:</p>
-
-  </section>
-);
+const Categories = () => {
+  const products = useSelector(filteredProducts);
+  return (
+      <Grid container spacing={2} xs={3}>
+        {products.map((category) => (
+          <Grid key={category.id}>
+            <Products product={category} />
+          </Grid>
+        ))}
+      </Grid>
+  );
+};
 
 export default Categories;
