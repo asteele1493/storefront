@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const products = [
+const PRODUCTS = [
   { name: 'TV', category: 'electronics', price: 699.00, inStock: 5 },
   { name: 'Radio', category: 'electronics', price: 99.00, inStock: 15 },
   { name: 'Shirt', category: 'clothing', price: 9.00, inStock: 25 },
@@ -13,10 +13,21 @@ const products = [
 const productSlice = createSlice({
   name: "product",
   initialState: {
-    products: products,
-    selectedProduct: undefined,
+    products: PRODUCTS,
+    activeCategory: undefined,
   },
   reducers: {
-    
-  }
-})
+    setActiveCategory: (state, action) => {
+      state.activeCategory = action.payload;
+    },
+  },
+});
+
+export const filteredProducts = ({
+  product: {activeCategory, products}
+}) => 
+  activeCategory
+    ? products.filter((product) => product.category === activeCategory)
+    : products;
+
+export default productSlice;
