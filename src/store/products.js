@@ -24,7 +24,7 @@ const productSlice = createSlice({
 });
 
 export const filteredProducts = ({
-  product: {activeCategory, products}
+  product: {activeCategory, products},
 }) => 
   activeCategory
     ? products.filter((product) => product.category === activeCategory)
