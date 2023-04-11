@@ -2,7 +2,7 @@
 
 Phase 1 Buildout: To setup the basic scaffolding of the application with initial styling and basic behaviors. This initial build sets up the file structure and state management so that we can progressively build this application in a scalable manner
 
-![Whiteboard](./Storefront.png)
+![Whiteboard for Phase 1](./Storefront.png)
 
 Technical Requirements:
 
@@ -30,3 +30,5 @@ Application Flow:
 - Sees a list of all products in the <SimpleCart /> side menu.
 - Clicks the delete button on an item and sees the item removed (see stretch goals for this lab).
 - Changes the cart total in the header. If two different products are in the cart you should see: CART (2)
+
+![Whiteboard for Phase 2](./Storefront%20(1).png)

@@ -9,6 +9,10 @@ import categories from "../../store/categories/index";
 import productSlice from "../../store/products";
 import { useDispatch } from "react-redux";
 
+//TODO: When category is selected, identify that category
+//show list of items with that category id.
+//Add add to cart button to each item
+
 const Header = () => {
   const dispatch = useDispatch();
   return (
