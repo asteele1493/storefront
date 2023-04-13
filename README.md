@@ -32,3 +32,12 @@ Application Flow:
 - Changes the cart total in the header. If two different products are in the cart you should see: CART (2)
 
 ![Whiteboard for Phase 2](./Storefront%20(1).png)
+
+Phase 3 Buildout: Connect the Virtual Store to an API to retrieve live data from your data source, using ```thunk``` to enable asynchronous actions.
+
+Technical Requirements: 
+
+- Continue to use Material UI Components for layout and styling.
+- Load the category and product list from a remote API on page load.
+- Update the product quantity in stock when adding items to (or removing from) the cart.
+- Continue to use multiple reducers
