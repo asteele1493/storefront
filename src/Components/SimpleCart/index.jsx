@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import productSlice from "../../store/products";
 import * as React from "react";
-import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
 import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
@@ -16,34 +16,22 @@ const SimpleCart = (props) => {
   });
 
   return (
-    <div>
-      {cart.inCart.map((product) => (
-        <>
-          <Button onClick={() => dispatch(productSlice.actions.increaseStock(product.name))}>View Cart</Button>
-          <Drawer
-            item={product}
-            open={product.open}
-            onClose={product.onClose}
-          >
-            <Box>
-              {!cart.inCart.length && (
-                <Typography>
-                  No items in cart!
-                </Typography>
-              )}
-              <div>
-                <Typography component="h3">
-                  {product.name}
-                </Typography>
-                <Typography component="h4">
-                  ${product.price}
-                </Typography>
-              </div>
-            </Box>
-          </Drawer>
-        </>
-      ))}
-    </div>
+    <>
+      <List
+        open={props.open}
+        onClose={props.handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={{ border: "1px dashed grey" }}>
+          {!cart.inCart.length && <Typography>No items in cart!</Typography>}
+          <div>
+            <ListItem key={}</Typography>
+            <ListItem component="h4">${product.price}</Typography>
+          </div>
+        </Box>
+      </List>
+    </>
   );
 };
 
